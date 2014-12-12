@@ -94,3 +94,7 @@ footer {
 footer a {
     text-decoration: none;
 }
+
+.new {
+    color: blue;
+}
