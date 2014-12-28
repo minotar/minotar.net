@@ -142,8 +142,8 @@
             </form>
         </div>
         <div class="two columns">
-            <strong>Gittip</strong>
-            <script data-gittip-username="clone1018" src="//gttp.co/v1.js"></script>
+            <strong>Gratipay</strong>
+            <script data-gratipay-username="minotar" src="//grtp.co/v1.js"></script>
         </div>
     </div>
 
@@ -253,14 +253,14 @@
                 if (typeof Gittip == 'undefined')
                     return setTimeout(loadProfile, 10);
 
-                Gittip.users.getPublic('clone1018', function(data) {
-                    Gittip.users.getCharts('clone1018', function(chart) {
+                Gittip.users.getPublic('minotar', function(data) {
+                    Gittip.users.getCharts('minotar', function(chart) {
                         print(pad('Receiving') + '$' + (+chart[0].receipts).toFixed(2) + '/wk');
                         //print(pad('Giving') + '$' + (-data.giving) + '/wk');
 
                         print(new Array(maxlength + 1).join('-'));
                         print(pad('Total') + '$' + (+chart[0].receipts).toFixed(2) + '/wk');
-                        print(pad('After Expenses') + '$' + ((+chart[0].receipts) - total) + '/wk');
+                        print(pad('After Expenses') + '$' + ((+chart[0].receipts) - total).toFixed(2) + '/wk');
                     });
                 });
             })();
