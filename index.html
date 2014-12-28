@@ -250,18 +250,16 @@
             print();
 
             (function loadProfile() {
-                if (typeof Gittip == 'undefined')
+                if (typeof Gratipay == 'undefined')
                     return setTimeout(loadProfile, 10);
 
-                Gittip.users.getPublic('minotar', function(data) {
-                    Gittip.users.getCharts('minotar', function(chart) {
-                        print(pad('Receiving') + '$' + (+chart[0].receipts).toFixed(2) + '/wk');
-                        //print(pad('Giving') + '$' + (-data.giving) + '/wk');
+                Gratipay.users.getPublic('minotar', function(data) {
+                    print(pad('Receiving') + '$' + (+data.receiving).toFixed(2) + '/wk');
+                    //print(pad('Giving') + '$' + (-data.giving) + '/wk');
 
-                        print(new Array(maxlength + 1).join('-'));
-                        print(pad('Total') + '$' + (+chart[0].receipts).toFixed(2) + '/wk');
-                        print(pad('After Expenses') + '$' + ((+chart[0].receipts) - total).toFixed(2) + '/wk');
-                    });
+                    print(new Array(maxlength + 1).join('-'));
+                    print(pad('Total') + '$' + (+data.receiving).toFixed(2) + '/wk');
+                    print(pad('After Expenses') + '$' + ((+data.receiving) - total) + '/wk');
                 });
             })();
         };
